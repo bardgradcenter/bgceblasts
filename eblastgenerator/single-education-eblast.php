@@ -3,6 +3,7 @@
     <head>
         <?php wp_head(); ?>
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <?php $email_template = get_field('email_template'); ?>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title><?php the_field('event_title'); ?></title>
         <style type="text/css">
@@ -85,85 +86,139 @@
                                 <!--/ONE COLUMN SECTION-->
                                 <?php }; ?>
 
+
+                                <?php
+                                $multiple_events = get_field('multiple_event_listings');
+                                if($multiple_events){ ?>
+	                                <?php if( have_rows('multiple_event_listings') ){ ?>
+	                                	<?php $index = 1; ?>
+		                                <!--ONE COLUMN SECTION-->
+		                                <table width="700" bgcolor="#ffffff" border="0" cellpadding="0" class="multiple_event_table" cellspacing="0" style="padding-top:30px;">
+		                                	<?php while ( have_rows('multiple_event_listings') ){
+		                                		the_row(); ?>
+			                                    <tr>
+			                                    	<?php if ($index % 2 == 0) { ?>
+				                                        <td class="multiple_event_row" valign="top" width="700" style="background-color:#ddd;">
+				                                             <div class="leftColumn" style="border:25px solid #ddd;">
+			                                        <?php } else { ?>
+			                                        	<td class="multiple_event_row" valign="top" width="700" style="background-color:#eee;">
+				                                             <div class="leftColumn" style="border:25px solid #eee;">
+			                                        <?php }; ?>
+			                                                <table cellpadding="0" cellspacing="0">
+			                                                    <tr>
+			                                                        <td width="200" valign="top">
+			                                                        	<?php 
+							                                            $image = get_sub_field('event_image');
+							                                            if( !empty($image) ): ?>
+							                                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+							                                            <?php endif; ?>
+			                                                        </td>
+			                                                        <td width="450" valign="middle">
+			                                                            <strong>                                             
+			                                                                <span style="font-size:18px;"><?php the_sub_field('event_title'); ?></span>
+			                                                            </strong><br><br>
+			                                                            <?php
+			                                                            	$event_description = get_sub_field('event_description');
+							                                                $no_opening_p = str_replace('<p>', '', $event_description);
+							                                                $no_p = str_replace('</p>', '<br /><br />', $no_opening_p);
+							                                                echo $no_p;
+						                                                ?>
+			                                                        </td>
+			                                                    </tr>
+			                                                </table>
+			                                            </div>
+			                                        </td>
+			                                    </tr>
+			                                    <?php $index++; ?>
+			                                <?php }; ?>
+		                                </table>
+		                                <!--/ONE COLUMN SECTION-->
+		                            <?php }; ?>
+                                <?php }; ?>
+
+
+
                                 <!--TWO COLUMN SECTION-->
                                 <table width="700" class="secondRow" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
                                     <tr>
                                         <td valign="top" width="375">
                                             <div class="leftColumn">
-                                                <?php
-                                                $event_type = get_field('event_type');
-                                                if($event_type){ ?>
-                                                    <?php the_field('event_type'); ?><br />
-                                                <?php }; ?>
-                                                <strong>
-                                                    <a href="<?php the_field('event_url'); ?>">
-                                                        <?php the_field('event_title'); ?>
-                                                    </a>
-                                                     <br />
-                                                </strong>
-                                                <?php
-                                                $speakers = get_field('speakers');
-                                                if($speakers){ ?>
-                                                    <?php the_field('speakers'); ?><br /><br />
-                                                <?php } else { ?>
-                                                    <br />
-                                                <?php }; ?>
+                                                <?php if($email_template == 'Standard Template'){ ?>
+	                                                <?php
+	                                                $event_type = get_field('event_type');
+	                                                if($event_type){ ?>
+	                                                    <?php the_field('event_type'); ?><br />
+	                                                <?php }; ?>
+	                                                <strong>
+	                                                    <a href="<?php the_field('event_url'); ?>">
+	                                                        <?php the_field('event_title'); ?>
+	                                                    </a>
+	                                                     <br />
+	                                                </strong>
+	                                                <?php
+	                                                $speakers = get_field('speakers');
+	                                                if($speakers){ ?>
+	                                                    <?php the_field('speakers'); ?><br /><br />
+	                                                <?php } else { ?>
+	                                                    <br />
+	                                                <?php }; ?>
 
-                                                <?php
-                                                $date = get_field('date');
-                                                if($date){ ?>
-                                                    <?php the_field('date'); ?><br />
-                                                <?php }; ?>
-                                                
-                                                <?php
-                                                $time = get_field('time');
-                                                if($time){ ?>
-                                                    <?php the_field('time'); ?><br /><br />
-                                                <?php } else { ?>
-                                                    <br />
-                                                <?php }; ?>
+	                                                <?php
+	                                                $date = get_field('date');
+	                                                if($date){ ?>
+	                                                    <?php the_field('date'); ?><br />
+	                                                <?php }; ?>
+	                                                
+	                                                <?php
+	                                                $time = get_field('time');
+	                                                if($time){ ?>
+	                                                    <?php the_field('time'); ?><br /><br />
+	                                                <?php } else { ?>
+	                                                    <br />
+	                                                <?php }; ?>
 
-                                                <?php
-                                                $location = get_field('location');
-                                                $no_opening_p = str_replace('<p>', '', $location);
-                                                $no_p = str_replace('</p>', '<br /><br />', $no_opening_p);
-                                                if($location){ ?>
-                                                    <?php echo $no_p; ?>
-                                                <?php }; ?>
+	                                                <?php
+	                                                $location = get_field('location');
+	                                                $no_opening_p = str_replace('<p>', '', $location);
+	                                                $no_p = str_replace('</p>', '<br /><br />', $no_opening_p);
+	                                                if($location){ ?>
+	                                                    <?php echo $no_p; ?>
+	                                                <?php }; ?>
 
 
-                                                <?php
-                                                $prices = get_field('prices');
-                                                if($prices){ ?>
-                                                    <?php the_field('prices'); ?><br /><br />
-                                                <?php }; ?>
+	                                                <?php
+	                                                $prices = get_field('prices');
+	                                                if($prices){ ?>
+	                                                    <?php the_field('prices'); ?><br /><br />
+	                                                <?php }; ?>
 
-                                                <?php
+	                                                <?php
 
-                                                $field = get_field_object('field_55c8df63b919a');
-                                                $value = get_field('register_rsvp');
-                                                $register_rsvp = $field['choices'][ $value ];
-                                                if($register_rsvp){ ?>
-                                                    <strong><?php echo $register_rsvp; ?>:</strong><br />
-                                                <?php }; ?>
+	                                                $field = get_field_object('field_55c8df63b919a');
+	                                                $value = get_field('register_rsvp');
+	                                                $register_rsvp = $field['choices'][ $value ];
+	                                                if($register_rsvp){ ?>
+	                                                    <strong><?php echo $register_rsvp; ?>:</strong><br />
+	                                                <?php }; ?>
 
-                                                <?php
-                                                $event_url = get_field('event_url');
-                                                if($event_url){ ?>
-                                                    <a href="<?php the_field('event_url'); ?>">Online</a>
-                                                <?php }; ?>
-                                                <?php
-                                                $reg_email = get_field('registration_email_address');
-                                                if($reg_email){ ?>
-                                                    &nbsp;│&nbsp;<a href="mailto:<?php the_field('registration_email_address'); ?>"><?php the_field('registration_email_address'); ?></a>
-                                                <?php }; ?>
-                                                <?php
-                                                $reg_phone = get_field('registration_phone_number');
-                                                if($reg_email){ ?>
-                                                    &nbsp;│&nbsp;<a href="tel:+1-<?php the_field('registration_phone_number'); ?>"><?php the_field('registration_phone_number'); ?></a><br /><br />
-                                                <?php } else { ?>
-                                                    <br /><br />
-                                                <?php }; ?>
+	                                                <?php
+	                                                $event_url = get_field('event_url');
+	                                                if($event_url){ ?>
+	                                                    <a href="<?php the_field('event_url'); ?>">Online</a>
+	                                                <?php }; ?>
+	                                                <?php
+	                                                $reg_email = get_field('registration_email_address');
+	                                                if($reg_email){ ?>
+	                                                    &nbsp;│&nbsp;<a href="mailto:<?php the_field('registration_email_address'); ?>"><?php the_field('registration_email_address'); ?></a>
+	                                                <?php }; ?>
+	                                                <?php
+	                                                $reg_phone = get_field('registration_phone_number');
+	                                                if($reg_email){ ?>
+	                                                    &nbsp;│&nbsp;<a href="tel:+1-<?php the_field('registration_phone_number'); ?>"><?php the_field('registration_phone_number'); ?></a><br /><br />
+	                                                <?php } else { ?>
+	                                                    <br /><br />
+	                                                <?php }; ?>
+	                                            <?php }; ?>
 
                                                 
                                                 <?php
@@ -434,11 +489,63 @@
                                 </table>
                                 <!--/ONE COLUMN SECTION-->
                                 <?php }; ?>
+
+                                <?php
+                                $multiple_events = get_field('multiple_event_listings');
+                                if($multiple_events){ ?>
+	                                <?php if( have_rows('multiple_event_listings') ){ ?>
+	                                	<?php $index = 1; ?>
+		                                <!--ONE COLUMN SECTION-->
+		                                <table width="700" bgcolor="#ffffff" border="0" cellpadding="0" class="multiple_event_table" cellspacing="0" style="padding-top:30px;">
+		                                	<?php while ( have_rows('multiple_event_listings') ){
+		                                		the_row(); ?>
+			                                    <tr>
+			                                    	<?php if ($index % 2 == 0) { ?>
+				                                        <td class="multiple_event_row" valign="top" width="700" style="background-color:#ddd;">
+				                                             <div class="leftColumn" style="border:25px solid #ddd;">
+			                                        <?php } else { ?>
+			                                        	<td class="multiple_event_row" valign="top" width="700" style="background-color:#eee;">
+				                                             <div class="leftColumn" style="border:25px solid #eee;">
+			                                        <?php }; ?>
+			                                                <table cellpadding="0" cellspacing="0">
+			                                                    <tr>
+			                                                        <td width="200" valign="top">
+			                                                        	<?php 
+							                                            $image = get_sub_field('event_image');
+							                                            if( !empty($image) ): ?>
+							                                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+							                                            <?php endif; ?>
+			                                                        </td>
+			                                                        <td width="450" valign="middle">
+			                                                            <strong>                                             
+			                                                                <span style="font-size:18px;"><?php the_sub_field('event_title'); ?></span>
+			                                                            </strong><br><br>
+			                                                            <?php
+			                                                            	$event_description = get_sub_field('event_description');
+							                                                $no_opening_p = str_replace('<p>', '', $event_description);
+							                                                $no_p = str_replace('</p>', '<br /><br />', $no_opening_p);
+							                                                echo $no_p;
+						                                                ?>
+			                                                        </td>
+			                                                    </tr>
+			                                                </table>
+			                                            </div>
+			                                        </td>
+			                                    </tr>
+			                                    <?php $index++; ?>
+			                                <?php }; ?>
+		                                </table>
+		                                <!--/ONE COLUMN SECTION-->
+		                            <?php }; ?>
+                                <?php }; ?>
+
+
 <!--TWO COLUMN SECTION-->
                                 <table width="700" class="secondRow" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
                                     <tr>
                                         <td valign="top" width="375">
                                             <div class="leftColumn">
+                                            	<?php if($email_template == 'Standard Template'){ ?>
                                                 <?php
                                                 $event_type = get_field('event_type');
                                                 if($event_type){ ?>
@@ -499,6 +606,7 @@
 <a href="<?php the_field('event_url'); ?>">Online</a><?php }; ?><?php $reg_email = get_field('registration_email_address'); if($reg_email){ ?> │ <a href="mailto:<?php the_field('registration_email_address'); ?>"><?php the_field('registration_email_address'); ?></a><?php }; ?><?php $reg_phone = get_field('registration_phone_number'); if($reg_email){ ?> │ <a href="tel:+1-<?php the_field('registration_phone_number'); ?>"><?php the_field('registration_phone_number'); ?></a><br /><br />
                                                 <?php } else { ?>
 <br /><br />
+                                                <?php }; ?>
                                                 <?php }; ?>
 
                                                 
