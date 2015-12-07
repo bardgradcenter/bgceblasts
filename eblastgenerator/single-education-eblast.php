@@ -107,15 +107,21 @@
 			                                                <table cellpadding="0" cellspacing="0">
 			                                                    <tr>
 			                                                        <td width="200" valign="top">
-			                                                        	<?php 
-							                                            $image = get_sub_field('event_image');
-							                                            if( !empty($image) ): ?>
-							                                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-							                                            <?php endif; ?>
-			                                                        </td>
+                                                                        <?php
+                                                                        $event_url = get_sub_field('event_link'); 
+                                                                        $image = get_sub_field('event_image');
+                                                                        if( !empty($image) ): ?>
+                                                                            <?php $size = 'thumbnail';
+                                                                            $thumb = $image['sizes'][ $size ];
+                                                                            $width = $image['sizes'][ $size . '-width' ];
+                                                                            $height = $image['sizes'][ $size . '-height' ];
+                                                                            ?>
+                                                                            <?php if(!empty($event_url)): ?><a href="<?php echo $event_url; ?>"><?php endif; ?><img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>"><?php if(!empty($event_url)): ?></a><?php endif; ?>
+                                                                        <?php endif; ?>
+                                                                    </td>
 			                                                        <td width="450" valign="middle">
 			                                                            <strong>                                             
-			                                                                <span style="font-size:18px;"><?php the_sub_field('event_title'); ?></span>
+			                                                                <span style="font-size:18px;"><?php if(!empty($event_url)): ?><a href="<?php echo $event_url; ?>"><?php endif; ?><?php the_sub_field('event_title'); ?><?php if(!empty($event_url)): ?></a><?php endif; ?></span>
 			                                                            </strong><br><br>
 			                                                            <?php
 			                                                            	$event_description = get_sub_field('event_description');
@@ -510,23 +516,29 @@
 			                                                <table cellpadding="0" cellspacing="0">
 			                                                    <tr>
 			                                                        <td width="200" valign="top">
-			                                                        	<?php 
-							                                            $image = get_sub_field('event_image');
-							                                            if( !empty($image) ): ?>
-							                                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-							                                            <?php endif; ?>
-			                                                        </td>
+                                                                        <?php
+                                                                        $event_url = get_sub_field('event_link'); 
+                                                                        $image = get_sub_field('event_image');
+                                                                        if( !empty($image) ): ?>
+                                                                            <?php $size = 'thumbnail';
+                                                                            $thumb = $image['sizes'][ $size ];
+                                                                            $width = $image['sizes'][ $size . '-width' ];
+                                                                            $height = $image['sizes'][ $size . '-height' ];
+                                                                            ?>
+                                                                            <?php if(!empty($event_url)): ?><a href="<?php echo $event_url; ?>"><?php endif; ?><img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>"><?php if(!empty($event_url)): ?></a><?php endif; ?>
+                                                                        <?php endif; ?>
+                                                                    </td>
 			                                                        <td width="450" valign="middle">
-			                                                            <strong>                                             
-			                                                                <span style="font-size:18px;"><?php the_sub_field('event_title'); ?></span>
-			                                                            </strong><br><br>
-			                                                            <?php
-			                                                            	$event_description = get_sub_field('event_description');
-							                                                $no_opening_p = str_replace('<p>', '', $event_description);
-							                                                $no_p = str_replace('</p>', '<br /><br />', $no_opening_p);
-							                                                echo $no_p;
-						                                                ?>
-			                                                        </td>
+                                                                        <strong>                                             
+                                                                            <span style="font-size:18px;"><?php if(!empty($event_url)): ?><a href="<?php echo $event_url; ?>"><?php endif; ?><?php the_sub_field('event_title'); ?><?php if(!empty($event_url)): ?></a><?php endif; ?></span>
+                                                                        </strong><br><br>
+                                                                        <?php
+                                                                            $event_description = get_sub_field('event_description');
+                                                                            $no_opening_p = str_replace('<p>', '', $event_description);
+                                                                            $no_p = str_replace('</p>', '<br /><br />', $no_opening_p);
+                                                                            echo $no_p;
+                                                                        ?>
+                                                                    </td>
 			                                                    </tr>
 			                                                </table>
 			                                            </div>
