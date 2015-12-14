@@ -22,8 +22,8 @@
             img {display:block;}
             a img {border:none;}
             p {padding: 0; margin:0;}
-            .content {width: 740px; padding:20px; font-family: Arial, sans-serif; font-size:13px;}
-            .content td {font-family: Arial, sans-serif; font-size:13px; line-height:18px;}
+            .content {width: 740px; padding:20px; font-family: Arial, sans-serif; font-size:14px;}
+            .content td {font-family: Arial, sans-serif; font-size:14px; line-height:19px;}
             .masthead {padding: 0 0 11px 0; border-bottom: 10px solid #000000;}
             .secondRow div.leftColumn {padding-right: 50px;}
             .secondRow div.rightColumn {padding-left: 0px; }
@@ -432,8 +432,8 @@
             img {display:block;}
             a img {border:none;}
             p {padding: 0; margin:0;}
-            .content {width: 740px; padding:20px; font-family: Arial, sans-serif; font-size:13px;}
-            .content td {font-family: Arial, sans-serif; font-size:13px; line-height:18px;}
+            .content {width: 740px; padding:20px; font-family: Arial, sans-serif; font-size:14px;}
+            .content td {font-family: Arial, sans-serif; font-size:14px; line-height:19px;}
             .masthead {padding: 0 0 11px 0; border-bottom: 10px solid #000000;}
             .secondRow div.leftColumn {padding-right: 50px;}
             .secondRow div.rightColumn {padding-left: 0px; }
