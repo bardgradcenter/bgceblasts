@@ -45,7 +45,13 @@
                                         <td valign="bottom" width="75">
                                             <a href="http://bgc.bard.edu/"><img src="http://bgcresources.dreamhosters.com/WP/eblasts/wp-content/uploads/sites/2/2015/10/ap_bgc_logo.jpg" width="125" height="74" alt="Bard Graduate Center"></a>
                                         </td>
-                                        <td valign="bottom" width="625" style="font-family: arial, sans-serif; text-align:right; font-size:24px;">
+                                        <?php
+                                        $fontSize = get_field('header_font-size');
+                                        if($fontSize) { ?>
+                                        	<td valign="bottom" width="625" style="font-family: arial, sans-serif; text-align:right; font-size:<?php the_field('header_font-size'); ?>px;">
+                                        <?php } else { ?>
+                                        	<td valign="bottom" width="625" style="font-family: arial, sans-serif; text-align:right; font-size:24px;">
+                                        <?php } ?> 
                                             <a href="<?php the_field('header_url'); ?>"><?php the_field('email_header'); ?></a>
                                         </td>
                                     </tr>
@@ -101,7 +107,10 @@
                                     <tr>
                                         <td valign="bottom" width="220">
                                             <a href="https://www.facebook.com/BardGradCenter"><img src="http://bgcresources.dreamhosters.com/WP/eblasts/wp-content/uploads/sites/2/2015/08/facebook-square-icon.png" width="14" height="14" style="display:inline; vertical-align:bottom; padding-bottom:0px;">&nbsp;&nbsp;Like us on Facebook</a><br />
-                                            <a href="https://twitter.com/BardGradCenter"><img src="http://bgcresources.dreamhosters.com/WP/eblasts/wp-content/uploads/sites/2/2015/08/twitter-icon.png" width="14" height="14" style="display:inline; vertical-align:bottom; padding-bottom:0px;">&nbsp;&nbsp;Follow us on Twitter</a>
+                                            <a href="https://twitter.com/BardGradCenter"><img src="http://bgcresources.dreamhosters.com/WP/eblasts/wp-content/uploads/sites/2/2015/08/twitter-icon.png" width="14" height="14" style="display:inline; vertical-align:bottom; padding-bottom:0px;">&nbsp;&nbsp;Follow us on Twitter</a><br /><br />
+
+                                            <a href="*|FORWARD|*">Forward this email to a friend.</a><br />
+                                            <a href="*|UNSUB|*">Unsubscribe from this email list.</a>
                                         </td>
                                         <td valign="bottom" width="480" style="text-align:right;">
                                             Bard Graduate Center<br />
@@ -168,8 +177,14 @@
                                         <td valign="bottom" width="75">
                                             <a href="http://bgc.bard.edu/"><img src="http://bgcresources.dreamhosters.com/WP/eblasts/wp-content/uploads/sites/2/2015/10/ap_bgc_logo.jpg" width="125" height="74" alt="Bard Graduate Center Gallery"></a>
                                         </td>
-                                        <td valign="bottom" width="625" style="font-family: arial, sans-serif; text-align:right; font-size:24px;">
-                                            <a href="<?php the_field('header_url'); ?>"><?php the_field('email_header'); ?></a>
+                                        <?php
+                                        $fontSize = get_field('header_font-size');
+                                        if($fontSize) { ?>
+<td valign="bottom" width="625" style="font-family: arial, sans-serif; text-align:right; font-size:<?php the_field('header_font-size'); ?>px;">
+                                        <?php } else { ?>
+<td valign="bottom" width="625" style="font-family: arial, sans-serif; text-align:right; font-size:24px;">
+                                        <?php } ?>
+	<a href="<?php the_field('header_url'); ?>"><?php the_field('email_header'); ?></a>
                                         </td>
                                     </tr>
                                 </table>
@@ -224,7 +239,9 @@
                                     <tr>
                                         <td valign="bottom" width="220">
                                             <a href="https://www.facebook.com/BardGradCenter"><img src="http://bgcresources.dreamhosters.com/WP/eblasts/wp-content/uploads/sites/2/2015/08/facebook-square-icon.png" width="14" height="14" style="display:inline; vertical-align:bottom; padding-bottom:0px;">&nbsp;&nbsp;Like us on Facebook</a><br />
-                                            <a href="https://twitter.com/BardGradCenter"><img src="http://bgcresources.dreamhosters.com/WP/eblasts/wp-content/uploads/sites/2/2015/08/twitter-icon.png" width="14" height="14" style="display:inline; vertical-align:bottom; padding-bottom:0px;">&nbsp;&nbsp;Follow us on Twitter</a>
+                                            <a href="https://twitter.com/BardGradCenter"><img src="http://bgcresources.dreamhosters.com/WP/eblasts/wp-content/uploads/sites/2/2015/08/twitter-icon.png" width="14" height="14" style="display:inline; vertical-align:bottom; padding-bottom:0px;">&nbsp;&nbsp;Follow us on Twitter</a><br /><br />
+                                            <a href="*|FORWARD|*">Forward this email to a friend.</a><br />
+                                            <a href="*|UNSUB|*">Unsubscribe from this email list.</a>
                                         </td>
                                         <td valign="bottom" width="480" style="text-align:right;">
                                             Bard Graduate Center<br />
