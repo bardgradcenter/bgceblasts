@@ -1,0 +1,12 @@
+body#tinymce.wp-editor {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+}
+body#tinymce.wp-editor .colorText {
+	color:#004c84;
+}
+body#tinymce.wp-editor h1 {
+	font-size: 18px;
+	line-height: 22px;
+}

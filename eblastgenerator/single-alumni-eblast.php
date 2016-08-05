@@ -23,10 +23,10 @@
             p {padding: 0; margin:0;}
             .content {width: 740px; padding:20px; font-family: Georgia, serif; font-size:14px;}
             .content td {font-family: Georgia, serif; font-size:14px; line-height:20px;}
-            .masthead {padding: 0 0 11px 0; border-bottom: 10px solid #000000;}
+            .masthead {padding: 0 0 14px 0; border-bottom: 7px solid #000000;}
             .secondRow div.leftColumn {padding-right: 50px;}
             .secondRow div.rightColumn {padding-left: 0px; }
-            .secondRow {padding-top:30px; padding-bottom: 0px; border-bottom: 10px solid #000;}
+            .secondRow {padding-top:30px; padding-bottom: 0px; border-bottom: 7px solid #000;}
             .content .footer td {font-family: Arial, sans-serif !important; font-size:11px !important; line-height: 15px !important;}
             .content .footer td.credit {padding-top: 15px;}
             .content .footer td a {text-decoration: none !important;}
@@ -42,10 +42,10 @@
                                 <!--TOP MASTHEADER-->
                                 <table width="700" class="masthead" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
                                     <tr>
-                                        <td valign="bottom" width="75">
-                                            <a href="http://bgc.bard.edu/"><img src="http://bgcresources.dreamhosters.com/WP/eblasts/wp-content/uploads/sites/2/2015/10/ap_bgc_logo.jpg" width="125" height="74" alt="Bard Graduate Center"></a>
+                                        <td valign="bottom" width="109">
+                                            <a href="http://bgc.bard.edu/"><img src="http://eblasts.commons.bgc.bard.edu/wp-content/uploads/sites/50/2016/05/bgc_eblast_logo.jpg" width="109" height="56" alt="Bard Graduate Center"></a>
                                         </td>
-                                        <td valign="bottom" width="625" style="font-family: arial, sans-serif; text-align:right; font-size:24px;">
+                                        <td valign="bottom" width="591" style="font-family: arial, sans-serif; text-align:right; font-size:24px;">
                                             <a href="<?php the_field('header_url'); ?>"><?php the_field('email_header'); ?></a>
                                         </td>
                                     </tr>
@@ -55,7 +55,7 @@
                                 <!--BANNER IMAGE-->
                                 <table width="700" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
                                     <tr>
-                                        <td width="700" style="border-bottom:2px solid #000;">
+                                        <td width="700" style="border-bottom:1px solid #000;">
                                             <?php 
                                             $image = get_field('banner_image');
                                             if( !empty($image) ): ?>
@@ -100,8 +100,8 @@
                                     </tr>
                                     <tr>
                                         <td valign="top" width="220">
-                                            <a href="https://www.facebook.com/BardGradCenter"><img src="http://bgcresources.dreamhosters.com/WP/eblasts/wp-content/uploads/sites/2/2015/08/facebook-square-icon.png" width="14" height="14" style="display:inline; vertical-align:bottom; padding-bottom:0px;">&nbsp;&nbsp;Like us on Facebook</a><br />
-                                            <a href="https://twitter.com/BardGradCenter"><img src="http://bgcresources.dreamhosters.com/WP/eblasts/wp-content/uploads/sites/2/2015/08/twitter-icon.png" width="14" height="14" style="display:inline; vertical-align:bottom; padding-bottom:0px;">&nbsp;&nbsp;Follow us on Twitter</a><br /><br />
+                                            <a href="https://www.facebook.com/BardGradCenter"><img src="http://eblasts.commons.bgc.bard.edu/wp-content/uploads/sites/50/2015/08/facebook-square-icon.png" width="14" height="14" style="display:inline; vertical-align:bottom; padding-bottom:0px;">&nbsp;&nbsp;Like us on Facebook</a><br />
+                                            <a href="https://twitter.com/BardGradCenter"><img src="http://eblasts.commons.bgc.bard.edu/wp-content/uploads/sites/50/2015/08/twitter-icon.png" width="14" height="14" style="display:inline; vertical-align:bottom; padding-bottom:0px;">&nbsp;&nbsp;Follow us on Twitter</a><br /><br />
 
                                             <a href="*|FORWARD|*">Forward this email to a friend.</a><br />
                                             <a href="*|UNSUB|*">Unsubscribe from this email list.</a>
@@ -149,10 +149,10 @@
             p {padding: 0; margin:0;}
             .content {width: 740px; padding:20px; font-family: Georgia, serif; font-size:14px;}
             .content td {font-family: Georgia, serif; font-size:14px; line-height:18px;}
-            .masthead {padding: 0 0 11px 0; border-bottom: 10px solid #000000;}
+            .masthead {padding: 0 0 14px 0; border-bottom: 7px solid #000000;}
             .secondRow div.leftColumn {padding-right: 50px;}
             .secondRow div.rightColumn {padding-left: 0px; }
-            .secondRow {padding-top:30px; padding-bottom: 0px; border-bottom: 10px solid #000;}
+            .secondRow {padding-top:30px; padding-bottom: 0px; border-bottom: 7px solid #000;}
             .content .footer td {font-family: Arial, sans-serif !important; font-size:11px !important; line-height: 15px !important;}
             .content .footer td.credit {padding-top: 15px;}
             .content .footer td a {text-decoration: none !important;}
@@ -168,10 +168,10 @@
                                 <!--TOP MASTHEADER-->
                                 <table width="700" class="masthead" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
                                     <tr>
-                                        <td valign="bottom" width="75">
-                                            <a href="http://bgc.bard.edu/"><img src="http://bgcresources.dreamhosters.com/WP/eblasts/wp-content/uploads/sites/2/2015/10/ap_bgc_logo.jpg" width="125" height="74" alt="Bard Graduate Center"></a>
+                                        <td valign="bottom" width="109">
+                                            <a href="http://bgc.bard.edu/"><img src="http://eblasts.commons.bgc.bard.edu/wp-content/uploads/sites/50/2016/05/bgc_eblast_logo.jpg" width="109" height="56" alt="Bard Graduate Center"></a>
                                         </td>
-                                        <td valign="bottom" width="625" style="font-family: arial, sans-serif; text-align:right; font-size:24px;">
+                                        <td valign="bottom" width="591" style="font-family: arial, sans-serif; text-align:right; font-size:24px;">
                                             <a href="<?php the_field('header_url'); ?>"><?php the_field('email_header'); ?></a>
                                         </td>
                                     </tr>
@@ -181,13 +181,13 @@
                                 <!--BANNER IMAGE-->
                                 <table width="700" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
                                     <tr>
-                                        <td width="700" style="border-bottom:2px solid #000;">
+                                        <td width="700" style="border-bottom:1px solid #000;">
                                             <?php 
                                             $image = get_field('banner_image');
                                             if( !empty($image) ): ?>
-<a href="<?php the_field('banner_url'); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"></a>
-                                        <?php endif; ?>
-</td>
+                                                <a href="<?php the_field('banner_url'); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"></a>
+                                            <?php endif; ?>
+                                        </td>
                                     </tr>
                                 </table>
                                 <!--/BANNER IMAGE-->
@@ -226,8 +226,8 @@
                                     </tr>
                                     <tr>
                                         <td valign="top" width="220">
-                                            <a href="https://www.facebook.com/BardGradCenter"><img src="http://bgcresources.dreamhosters.com/WP/eblasts/wp-content/uploads/sites/2/2015/08/facebook-square-icon.png" width="14" height="14" style="display:inline; vertical-align:bottom; padding-bottom:0px;">&nbsp;&nbsp;Like us on Facebook</a><br />
-                                            <a href="https://twitter.com/BardGradCenter"><img src="http://bgcresources.dreamhosters.com/WP/eblasts/wp-content/uploads/sites/2/2015/08/twitter-icon.png" width="14" height="14" style="display:inline; vertical-align:bottom; padding-bottom:0px;">&nbsp;&nbsp;Follow us on Twitter</a><br /><br />
+                                            <a href="https://www.facebook.com/BardGradCenter"><img src="http://eblasts.commons.bgc.bard.edu/wp-content/uploads/sites/50/2015/08/facebook-square-icon.png" width="14" height="14" style="display:inline; vertical-align:bottom; padding-bottom:0px;">&nbsp;&nbsp;Like us on Facebook</a><br />
+                                            <a href="https://twitter.com/BardGradCenter"><img src="http://eblasts.commons.bgc.bard.edu/wp-content/uploads/sites/50/2015/08/twitter-icon.png" width="14" height="14" style="display:inline; vertical-align:bottom; padding-bottom:0px;">&nbsp;&nbsp;Follow us on Twitter</a><br /><br />
 
                                             <a href="*|FORWARD|*">Forward this email to a friend.</a><br />
                                             <a href="*|UNSUB|*">Unsubscribe from this email list.</a>
