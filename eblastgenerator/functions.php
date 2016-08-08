@@ -48,4 +48,12 @@
 	    add_editor_style( 'custom-editor-style.css' );
 	}
 	add_action( 'admin_init', 'wpdocs_theme_add_editor_styles' );
+
+
+	// Add options page(s) //
+	if( function_exists('acf_add_options_page') ) {
+	
+		acf_add_options_page('Newsletter Options');
+		
+	}
 ?>
