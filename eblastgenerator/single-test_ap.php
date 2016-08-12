@@ -164,29 +164,33 @@
                                 </table>
                                 <!--/TOP MASTHEADER-->
 
-                                <!--BANNER IMAGE-->
-                                <table width="700" class="banner" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
-                                    <tr>
-                                        <td valign="top" width="700">
-                                            <?php 
-                                            $image = get_field('banner_image');
-                                            $banner_url = get_field('banner_image_url');
-                                            $banner_image_alt_text = get_field('banner_image_alt_text');
-                                            if($banner_image_alt_text){ ?>
-                                            	<div class="alt"><?php echo $banner_image_alt_text; ?></div>
-                                            <?php } ?>
-                                            <?php if( !empty($image) ): ?>
-                                            	<?php if($banner_url) { ?>
-                                                	<a href="<?php the_field('banner_image_url'); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php the_field('banner_image_alt_text'); ?>"></a>
-                                                <?php } else { ?>
-                                                	<img src="<?php echo $image['url']; ?>" alt="<?php the_field('banner_image_alt_text'); ?>">
-                                                <?php } ?>
-                                            <?php endif; ?>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <br>
-                                <!--/BANNER IMAGE-->
+                                <?php 
+                                $image = get_field('banner_image');
+                                if($image){ ?>
+                                	<!--BANNER IMAGE-->
+	                                <table width="700" class="banner" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
+	                                    <tr>
+	                                        <td valign="top" width="700">
+	                                            <?php 
+	                                            $image = get_field('banner_image');
+	                                            $banner_url = get_field('banner_image_url');
+	                                            $banner_image_alt_text = get_field('banner_image_alt_text');
+	                                            if($banner_image_alt_text){ ?>
+	                                            	<div class="alt"><?php echo $banner_image_alt_text; ?></div>
+	                                            <?php } ?>
+	                                            <?php if( !empty($image) ): ?>
+	                                            	<?php if($banner_url) { ?>
+	                                                	<a href="<?php the_field('banner_image_url'); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php the_field('banner_image_alt_text'); ?>"></a>
+	                                                <?php } else { ?>
+	                                                	<img src="<?php echo $image['url']; ?>" alt="<?php the_field('banner_image_alt_text'); ?>">
+	                                                <?php } ?>
+	                                            <?php endif; ?>
+	                                        </td>
+	                                    </tr>
+	                                </table>
+	                                <br>
+	                                <!--/BANNER IMAGE-->
+                                <?php } ?>
 
 								<!--CONTENT SECTIONS-->
 								<?php 
@@ -577,7 +581,7 @@
                 if($fontSize) { ?>
 					font-size: <?php the_field('header_font-size'); ?>px;
 				<?php } else { ?>
-					font-size: 24px;
+					font-size: 18px;
 				<?php } ?>
 			}
 			.banner {
