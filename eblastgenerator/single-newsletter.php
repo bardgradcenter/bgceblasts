@@ -508,15 +508,17 @@
 															                                    			</tr>
 														                                    			</table>
 							                                										<?php } else { //if there are an odd number of items and this is the last item do this// ?>
-							                                											<!--SPACER-->
-																                                			<table bgcolor="#ffffff" border="0" cellspacing="0" cellpadding="0">
-																                                				<tr>
-																		                                    		<td height="60">
-																		                                    			&nbsp;
-																		                                    		</td>
-																		                                    	</tr>
-																		                                    </table>
-																		                                <!--/SPACER-->
+							                                											<?php if($f != 1){ ?>
+							                                												<!--SPACER-->
+																	                                			<table bgcolor="#ffffff" border="0" cellspacing="0" cellpadding="0">
+																	                                				<tr>
+																			                                    		<td height="60">
+																			                                    			&nbsp;
+																			                                    		</td>
+																			                                    	</tr>
+																			                                    </table>
+																			                                <!--/SPACER-->
+							                                											<?php } ?>
 									                                									<table class="features" bgcolor="#ffffff" border="0" cellspacing="0" cellpadding="0">
 																	                                    	<tr>
 
