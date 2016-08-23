@@ -146,7 +146,7 @@
                                     <tr>
                                         <td valign="bottom" width="109">
                                         	<span>Bard Graduate Center</span>
-                                            <a href="http://bgc.bard.edu/"><img src="http://eblasts.commons.bgc.bard.edu/wp-content/uploads/sites/50/2016/05/bgc_eblast_logo.jpg" width="109" height="56" alt="Bard Graduate Center"></a>
+                                            <a href="http://bgc.bard.edu/"><img src="http://eblasts.commons.bgc.bard.edu/wp-content/uploads/sites/50/2016/08/BGC_Logo_Tagline.jpg" width="206" height="72" alt="Bard Graduate Center"></a>
                                         </td>
                                         <td valign="bottom" width="591" style="text-align:right;">
                                         	<?php
